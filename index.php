@@ -3,18 +3,15 @@
 <head>
 	<title>Notes Application</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 	<script type="text/javascript" src="js/script.js"></script>	
-
-	<!-- BOOTSTRAP -->
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="css/css/bootstrap.min.css">
-		<!-- JS -->
-		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="js/js/bootstrap.bundle.min.js"></script>
-	<!-- BOOTSRAP END -->
-
-	<!-- ICON -->
-		<link rel="stylesheet" type="text/css" href="icons/fontawesome-free-5.15.1-web/css/all.css">
 
 </head> 		
 <body>
@@ -26,6 +23,10 @@
 			</button>
 		</div>
 	</div>
+
+
+
+
 
 <!-- MODALS -->
 <div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="addNoteModalLabel" aria-hidden="true">
@@ -40,8 +41,8 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="not-title" class="col-form-label">Title:</label>
-            <input type="text" class="form-control" id="not-title">
+            <label for="note-title" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="note-title">
           </div>
           <div class="form-group">
             <label for="note-description" class="col-form-label">Description:</label>
@@ -51,7 +52,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save Note</button>
+        <button type="button" class="btn btn-primary" id="save_note">Save Note</button>
       </div>
     </div>
   </div>
@@ -59,4 +60,5 @@
 
 <!-- MODALS -->
 </body>
+
 </html>
