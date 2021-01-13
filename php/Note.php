@@ -22,6 +22,19 @@
 			$pdo->rollback();
 			throw $e;
 		}
+	}else if($_POST['action'] == 'get_notes'){
+		$user_id = $_POST['user_id'];
+		try {
+			$sql = "SELECT * FROM  notes WHERE user_id = $user_id AND status = 1";
+			$stm = $pdo->query($sql);
+			$rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+			echo json_encode($rows);
+		} catch (Exception $e) {
+
+			throw $e;
+		}
+
 	}
+
 
 ?>	

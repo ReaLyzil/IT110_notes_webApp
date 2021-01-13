@@ -22,6 +22,11 @@
 				<i class="fa fa-plus" data-toggle="modal" data-target="#addNoteModal"></i>
 			</button>
 		</div>
+    <div class="notes">
+      <ul class="notes_list">
+      </ul>
+    </div>
+
 	</div>
 
 
