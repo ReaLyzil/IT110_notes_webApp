@@ -34,23 +34,25 @@
 			throw $e;
 		}
 
-	}else if($_POST['action'] == 'delete_note'){
+	}else if($_POST['action'] == 'edit_note'){
 		
-		$note_id =  intval($_POST['id']);
 		try {
 			
 			$pdo->beginTransaction();
-			$prepared_statement = $pdo->prepare("DELETE FROM notes WHERE id=?");
+			$prepared_statement = $pdo->prepare("UPDATE notes SET title = ? , description = ? , updated_at = ? WHERE id = ?");
 
-			$prepared_statement->execute(array($note_id));
+			$prepared_statement->execute(array($_POST['data']["title"],$_POST['data']["description"],date("Y-m-d 
+				H:i:s"),$_POST['data']["id"]));
 
 			$pdo->commit();
 
-			echo "deleted";
+			echo "edited!";
 		} catch (Exception $e) {
 			$pdo->rollback();
 			throw $e;
 		}
+
+	}else if($_POST['action'] == 'edit_note'){
 
 	}
 
