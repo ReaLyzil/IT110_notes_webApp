@@ -34,6 +34,24 @@
 			throw $e;
 		}
 
+	}else if($_POST['action'] == 'delete_note'){
+
+		$note_id =  intval($_POST['id']);
+		try {
+
+			$pdo->beginTransaction();
+			$prepared_statement = $pdo->prepare("DELETE FROM notes WHERE id=?");
+
+			$prepared_statement->execute(array($note_id));
+
+			$pdo->commit();
+
+			echo "deleted";
+		} catch (Exception $e) {
+			$pdo->rollback();
+			throw $e;
+		}
+
 	}else if($_POST['action'] == 'edit_note'){
 		
 		try {
@@ -52,8 +70,5 @@
 			throw $e;
 		}
 
-	}else if($_POST['action'] == 'edit_note'){
-
 	}
-
 ?>	

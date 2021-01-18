@@ -13,21 +13,42 @@
 
 	<script type="text/javascript" src="js/script.js"></script>	
 
-</head> 		
+</head> 		  
 <body>
-	<h1 class="heading">My Notes</h1>
-	<div class="container">
-		<div class="row">
-			<button class="btn btn-primary col-1 offset-10">
-				<i class="fa fa-plus" data-toggle="modal" data-target="#addNoteModal"></i>
-			</button>
-		</div>
-    <div class="notes">
-      <ul class="notes_list">
+                <!-- START OF NAVBAR! -->
+<header class="pageheader">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost/IT110_notes_webApp/index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/IT110_notes_webApp/members.php">Group Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost/IT110_notes_webApp/about.php">About Project</a>
+        </li>
       </ul>
     </div>
+    <h5 class="mr-2 text-white">Welcome, User</h5>
+    <button class="btn btn-outline-success" id="btn_signout" type="button">Sign Out</button>
+  </nav>
+</header> 
+                <!-- END OF NAVBAR! -->  
+  	<h1 class="heading">My Notes</h1>
+  	<div class="container">
+  		<div class="row">
+  			<button class="btn btn-primary col-1 offset-10">
+  				<i class="fa fa-plus" data-toggle="modal" data-target="#addNoteModal"></i>
+  			</button>
+  		</div>
+      <div class="notes">
+        <ul class="notes_list">
+        </ul>
+      </div>
 
-	</div>
+  	</div>
 
 
 
@@ -91,9 +112,6 @@
     </div>
   </div>
 </div>
-
-
-
 <!-- MODALS -->
 </body>
 

@@ -14,3 +14,11 @@ li{
 .note{
 	margin: 1%;
 }
+
+.pageheader nav ul{
+	margin-left: 90px;
+}
+
+#btn_signout{
+	margin-right: 145px;
+}

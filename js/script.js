@@ -21,22 +21,30 @@ var user = 1;
 			});
 
 		},
-		get: function(user_id){
+		get: function(user_id,created_at,updated_at){
 			$.ajax({
 				type : "POST",
-				data : { user_id: user_id, action : 'get_notes'},
+				data : { user_id: user_id, created_at: created_at,updated_at: updated_at, action : 'get_notes'},
 				url : 'php/Note.php',
 				success : function(data){
 					Note.list = jQuery.parseJSON(data);
+					console.log(data);
 					$(".notes_list").empty();
 					$.each(Note.list, function(index, value){
-							$(".notes_list").append("<li class=\"note\"><div class=\"card\">"
-					           +"<div class=\"card-header\">"+value.title+"</div>"
-					           +"<div class=\"card-body clearfix\">"
-					           +"<p class=\"card-text\">"+value.description+"</p>"
-					           +"<button data-note_id=\""+value.id+"\" class=\"pull-right btn btn-primary m-1 edit_note\"><i class=\"fa fa-edit\"></i></button>"
-					           +"<button data-note_id=\""+value.id+"\" class=\"pull-right btn btn-primary m-1 delete_note\"><i class=\"fa fa-trash\"></i></button>"
-					           +"</div></div></li>");
+							let new_date = value.created_at;
+								if(value.updated_at != "0000-00-00 00:00:00"){
+									new_date = value.updated_at;
+									console.log("create at: ",new_date);
+								}
+									$(".notes_list").append("<li class=\"note\"><div class=\"card\">"
+							           +"<div class=\"card-header\">"+value.title
+							           +"<div class=\"pull-right\">"
+							           +"<p>"+new_date+"</p></div></div>"
+							           +"<div class=\"card-body clearfix\">"
+							           +"<p class=\"card-text\">"+value.description+"</p>"
+							           +"<button data-note_id=\""+value.id+"\" class=\"pull-right btn btn-primary m-1 edit_note\"><i class=\"fa fa-edit\"></i></button>"
+							           +"<button data-note_id=\""+value.id+"\" class=\"pull-right btn btn-primary m-1 delete_note\"><i class=\"fa fa-trash\"></i></button>"
+							           +"</div></div></li>");
 					});
 				}
 			})
@@ -52,7 +60,7 @@ var user = 1;
 					success:function(data){
 						Note.get(user);
 					}
-				})
+				});
 
 			}	
 		},
