@@ -1,6 +1,9 @@
 <?php
 
+
 	include 'dbconnect.php';
+	session_start();
+	$id = $_SESSION['user_id'];
 
 	if($_POST['action'] == 'add_note'){
 		try {
@@ -13,7 +16,7 @@
 			echo json_encode($name);
 			echo json_encode($description);
 
-			$prepared_statement->execute(array($name, $description, 1, 1));
+			$prepared_statement->execute(array($name, $description, $id, 1));
 
 				echo $pdo->lastInsertId();
 
@@ -23,9 +26,9 @@
 			throw $e;
 		}
 	}else if($_POST['action'] == 'get_notes'){
-		$user_id = $_POST['user_id'];
+		
 		try {
-			$sql = "SELECT * FROM  notes WHERE user_id = $user_id AND status = 1";
+			$sql = "SELECT * FROM  notes WHERE user_id = $id AND status = 1";
 			$stm = $pdo->query($sql);
 			$rows = $stm->fetchAll(PDO::FETCH_ASSOC);
 			echo json_encode($rows);

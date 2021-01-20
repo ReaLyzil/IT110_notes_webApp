@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var user = 1;
+var user = 0;
 
 	var Note = {
 		add: function(name,description){
@@ -11,7 +11,7 @@ var user = 1;
 			$.ajax({
 				type : "POST",
 				data : { data: new_note, action : 'add_note'},
-				url : 'php/Note.php',
+				url : '/IT110_notes_webApp/php/Note.php',
 				success : function(data){
 					Note.get(user);
 					$("#addNoteModal").modal("hide");
@@ -25,16 +25,16 @@ var user = 1;
 			$.ajax({
 				type : "POST",
 				data : { user_id: user_id, created_at: created_at,updated_at: updated_at, action : 'get_notes'},
-				url : 'php/Note.php',
+				url : '/IT110_notes_webApp/php/Note.php',
 				success : function(data){
+
 					Note.list = jQuery.parseJSON(data);
-					console.log(data);
+
 					$(".notes_list").empty();
 					$.each(Note.list, function(index, value){
 							let new_date = value.created_at;
 								if(value.updated_at != "0000-00-00 00:00:00"){
 									new_date = value.updated_at;
-									console.log("create at: ",new_date);
 								}
 									$(".notes_list").append("<li class=\"note\"><div class=\"card\">"
 							           +"<div class=\"card-header\">"+value.title
@@ -56,7 +56,7 @@ var user = 1;
 				$.ajax({
 					type:"POST",
 					data: {id:note_id,action:'delete_note'},
-					url: 'php/Note.php',
+					url: '/IT110_notes_webApp/php/Note.php',
 					success:function(data){
 						Note.get(user);
 					}
@@ -76,11 +76,11 @@ var user = 1;
 					title: $("#edit_note-title").val(),
 					description: $("#edit_note-description").val(),
 				};
-				console.log(edited_note);
+
 				$.ajax({
 					type:"POST",
 					data: {data:edited_note,action:'edit_note'},
-					url: 'php/Note.php',
+					url: '/IT110_notes_webApp/php/Note.php',
 					success:function(data){
 						Note.get(user);
 						$("#editNoteModal").modal("hide");

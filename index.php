@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['User'])){
+      header("location:../IT110_notes_webApp/php/login.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,29 +27,34 @@
                 <!-- START OF NAVBAR! -->
 <header class="pageheader">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse ml-5" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost/IT110_notes_webApp/index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/IT110_notes_webApp/members.php">Group Members</a>
+          <a class="nav-link" href="../IT110_notes_webApp/php/members.php">Group Members</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost/IT110_notes_webApp/about.php">About Project</a>
+          <a class="nav-link" href="../IT110_notes_webApp/php/about.php">About Project</a>
         </li>
       </ul>
     </div>
-    <h5 class="mr-2 text-white">Welcome, User</h5>
-    <button class="btn btn-outline-success" id="btn_signout" type="button">Sign Out</button>
+    <h5 class="mr-2 text-white">Welcome , <?php 
+    echo $_SESSION['User']; 
+    ?>
+    </h5>
+    <form action="../IT110_notes_webApp/php/logout.php" method="POST">
+    <button type="submit" name="Signout" class="btn btn-outline-success" id="btn_signout" type="button">Sign Out</button>
+    </form>
   </nav>
 </header> 
                 <!-- END OF NAVBAR! -->  
   	<h1 class="heading">My Notes</h1>
   	<div class="container">
   		<div class="row">
-  			<button class="btn btn-primary col-1 offset-10">
-  				<i class="fa fa-plus" data-toggle="modal" data-target="#addNoteModal"></i>
+  			<button class="btn btn-primary col-1 offset-10" data-toggle="modal" data-target="#addNoteModal">
+  				<i class="fa fa-plus"></i>
   			</button>
   		</div>
       <div class="notes">
