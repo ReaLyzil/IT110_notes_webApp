@@ -31,8 +31,7 @@
 	    <small class="form-text text-muted">We'll never share your Password with anyone else.</small>
 	  </div>
 	  <button type="submit"class="btn btn-success pull-right mr-3" name="SignIn" id="Signin_btn">Sign in</button>
-	  <p class="pull-right m-2">or</p>
-	  <button class="btn btn-primary pull-right" name="Register">Register</button>
+	  <p class="font-italic pull-left ml-3 mt-2">Don't have an account? <a href="register.php">Register here!</a></p>
 	  <br>
 	  <br>
 	</form>

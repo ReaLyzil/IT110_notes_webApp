@@ -50,9 +50,11 @@
 	if(strpos($fullUrl, "Empty=") == true){
 		echo "<p class=\"bg-danger text-light text-center py-2 mt-2 border border-dark\">You did not fill all fields!<p>";
 	}else if(strpos($fullUrl, "NotMatch=") == true){
-		echo "<p class=\"bg-danger text-light text-center py-2 mt-2 border border-dark\">Two password do not match!<p>";
+		echo "<p class=\"bg-danger text-light text-center py-2 mt-2 border border-dark\">Two password did not match!<p>";
 	}else if(strpos($fullUrl, "AlreadyExist=") == true){
 		echo "<p class=\"bg-danger text-light text-center py-2 mt-2 border border-dark\">Username already exist!<p>";
+	}else if(strpos($fullUrl, "Registered=") == true){
+		echo "<p class=\"text-dark text-center py-2 mt-2 border border-dark\" id=\"account_created\" >You have created an acccount. Try logging in!<p>";
 	}
 ?>
 	</div>

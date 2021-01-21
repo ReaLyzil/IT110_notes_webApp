@@ -44,3 +44,7 @@ li{
 #signin-text{
 	text-decoration: underline;
 }
+
+#account_created{
+	background-color: #90EE90;
+}

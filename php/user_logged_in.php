@@ -16,30 +16,26 @@
  	}else{
  		
  		$stmt = $con->prepare("SELECT id , password FROM user WHERE username = ?"); //query to the database
-        $stmt->bind_param('s', $user_name);		
-        $stmt->execute();
-        $stmt->bind_result($user_id,$hashed_pass);
-        $stmt->store_result();
+        $stmt->bind_param('s', $user_name);                     //insert data /\ in question mark above
+        $stmt->execute();                                       //execute the query
+        $stmt->bind_result($user_id,$hashed_pass);              //to put the data from database in variables
+        $stmt->store_result();                                  //to store the result
 
- 		if($stmt->num_rows == 1){
+ 		if($stmt->num_rows == 1){        //if found then execute below
             while($stmt->fetch()){
-                if(password_verify($_POST['password'],$hashed_pass)){
-                        $_SESSION['user_id'] = $user_id;
-                        $_SESSION['User'] = $_POST['username'];
-                        header("location: ../index.php");
+                if(password_verify($_POST['password'],$hashed_pass)){   //password from user and database(hashed)
+                        $_SESSION['user_id'] = $user_id;        //session for the user id, used to get notes
+                        $_SESSION['User'] = $_POST['username']; //use to welcome the user in navbar
+                        header("location: ../index.php");       //redirect to the main page
                 }
         		else{
-                    header("location:login.php?InvalidPassword= Please enter correct password");     
+                    header("location:login.php?InvalidPassword= Please enter correct password"); //incorrect password  
                 }
             }
         }else{
-            header("location:login.php?InvalidUsername= Please enter correct username");     
+            header("location:login.php?InvalidUsername= Please enter correct username"); //incorrect username
         }
  	}	
- }else if(isset($_POST['Register'])){
-
-    header("location:register.php");
-
  }else{
 
  	$stmt->close();
