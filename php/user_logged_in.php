@@ -1,7 +1,7 @@
 <?php
 
  require_once('dbconnect.php');
- session_start();	//to save $_SESSION variables and accessable to different page that cotain this function
+ session_start();	      //to save $_SESSION variables and accessable to different page that cotain this function
 
 
  if(isset($_POST['SignIn'])){	//the code below will execute if the SignIn button is clicked

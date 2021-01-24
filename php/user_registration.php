@@ -30,26 +30,26 @@
 
             //if the username dont exist then the code below will execute
 
-            if($_POST['password'] != $_POST['con_password']){   //check if the confirm password and users password match
+        if($_POST['password'] != $_POST['con_password']){   //check if the confirm password and users password match
 
- 				header("location:register.php?NotMatch= Two password do not match");   //if not match, then ¯\_(ツ)_/¯
+ 			header("location:register.php?NotMatch= Two password do not match");   //if not match, then ¯\_(ツ)_/¯
 
- 			}else{
+ 		}else{
 
-                //the code below prevent hackers to use SQL inject so ¯\_(ツ)_/¯
+            //the code below prevent hackers to use SQL inject so ¯\_(ツ)_/¯
 
-     			$fullname =  mysqli_real_escape_string($con,$_POST['user_fullname']); 
-    		 	$username =  mysqli_real_escape_string($con,$_POST['username']);
-    		 	$password =  mysqli_real_escape_string($con,$_POST['password']);
-    		 	$confirm_pass =  mysqli_real_escape_string($con,$_POST['con_password']);
+     		$fullname =  mysqli_real_escape_string($con,$_POST['user_fullname']); 
+    		$username =  mysqli_real_escape_string($con,$_POST['username']);
+    		$password =  mysqli_real_escape_string($con,$_POST['password']);
+    		$confirm_pass =  mysqli_real_escape_string($con,$_POST['con_password']);
 
-    	 		$password = password_hash($password, PASSWORD_BCRYPT);  //encrypt the password 
-    	 		$sql = "INSERT INTO user (fullname,username,password) VALUES('$fullname','$username','$password')" ;
-    	 		mysqli_query($con,$sql);
+    	    $password = password_hash($password, PASSWORD_BCRYPT);  //encrypt the password 
+    	 	$sql = "INSERT INTO user (fullname,username,password) VALUES('$fullname','$username','$password')" ;
+    	 	mysqli_query($con,$sql);
 
-					header("location:register.php?Registered= Account created");
+				header("location:register.php?Registered= Account created");
 					
- 			}
+ 		}
 
  	}
 

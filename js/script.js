@@ -36,8 +36,8 @@ var user = 0;
 								if(value.updated_at != "0000-00-00 00:00:00"){
 									new_date = value.updated_at;
 								}
-									$(".notes_list").append("<li class=\"note\"><div class=\"card\">"
-							           +"<div class=\"card-header\">"+value.title
+									$(".notes_list").append("<li class=\"note\"><div class=\"shadow card\">"
+							           +"<div class=\"bg-dark text-light card-header\">"+value.title
 							           +"<div class=\"pull-right\">"
 							           +"<p>"+new_date+"</p></div></div>"
 							           +"<div class=\"card-body clearfix\">"

@@ -48,3 +48,40 @@ li{
 #account_created{
 	background-color: #90EE90;
 }
+
+    /*for about page*/
+
+         .pageheader header:hover{
+          color: violet;
+          opacity: 0.5;
+          font-size: 35px;
+        }
+        .pageheader header{
+          color: pink;
+          margin-top: 50px;
+          font-size: 35px;
+          margin-bottom: 30px;
+        }
+
+     
+        .pageheader2 {
+          color: black;
+          margin-top: 50px;
+          font-size: 20px;
+          margin-bottom: 30px;
+          font-family: sans-serif;
+        }
+        .pageheader2 summary{
+          color: violet;
+        }
+        .pageheader2 p{
+          font-size: 20px;
+          margin-top: 20px;
+        }
+
+        .pageheader2 table, th, td {
+         border: 1px solid pink;
+        }
+        .summary ul.p{
+          color: red;
+        }

@@ -1,9 +1,9 @@
 <?php
 
 
-	include 'dbconnect.php';
-	session_start();
-	$id = $_SESSION['user_id'];
+	include 'dbconnect.php';				//include the connection to the database
+	session_start();						//then start the session
+	$id = $_SESSION['user_id'];			
 
 	if($_POST['action'] == 'add_note'){
 		try {

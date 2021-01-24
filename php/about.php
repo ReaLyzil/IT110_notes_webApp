@@ -21,7 +21,7 @@
 
   <script type="text/javascript" src="../js/script.js"></script>
 </head>
-<body>
+<body class="bg-light">
               <!-- START OF NAVBAR! -->
 <header class="pageheader">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,9 +29,6 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="../index.php">Home</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="members.php">Group Members</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="about.php">About Project<span class="sr-only">(current)</span></a>
@@ -48,7 +45,84 @@
 
 
 
-              <center><br><br><h1>PAGE UNDER CONSTRUCTION</h1></center>
+              <div class="pageheader">
+
+                      <center>
+                        <header><h1>ABOUT PROJECT</h1></header>
+                      </center>
+
+                       <div class="pageheader2">
+
+                    <center>
+                        <details>
+                          <summary>More about project</summary>
+                        <p>This project is the final requirements in IT 110 "WEBPAGE DESIGN AND DEVELOPMENT" </p> 
+
+                        <p>The list below are the functions of the said project:</p>
+
+                            <ul>
+                              <p>1. The user can register before he/she can login</p>
+                              <p>2. The user can Login and Logout</p>
+                              <p>3. Can add, delete, and edit notes</p>
+                              <p></p>
+                            </ul>  
+                        </details>
+                    </center>
+
+                 
+                     <center>
+                       <details>
+                            <summary>Members</summary>
+                   
+                            <table style="width:100%">
+                                  <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th> 
+                                    <th>Section</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Cedric</td>
+                                    <td>Castro</td>
+                                    <td>HL1</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Rea Lyzil</td>
+                                    <td>Giron</td>
+                                    <td>HL1</td>
+                                  </tr>
+                                   <tr>
+                                    <td>Renz Ivan</td>
+                                    <td>Irag</td>
+                                    <td>HL1</td>
+                                  </tr>
+                                   <tr>
+                                    <td>Benedict</td>
+                                    <td>Casil</td>
+                                    <td>HL1</td>
+                                  </tr>
+                                   <tr>
+                                    <td>John Bryan</td>
+                                    <td>Pagaran</td>
+                                    <td>KO1</td>
+                                  </tr>
+                            </table>
+
+                        </details>
+                    </center>
+
+      
+                    <center>
+                        <details>
+                          <summary>Instructor</summary>
+
+                            <ul>
+                              <p>Mr. El Bajador Villacampa</p>
+                              
+                            </ul>  
+                        </details>
+                    </center>
+    </div>
+  </div>
 
 </body>
 </style>

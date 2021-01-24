@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="js/script.js"></script>	
 
 </head> 		  
-<body>
+<body class="bg-light">
                 <!-- START OF NAVBAR! -->
 <header class="pageheader">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,9 +31,6 @@
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../IT110_notes_webApp/php/members.php">Group Members</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../IT110_notes_webApp/php/about.php">About Project</a>
